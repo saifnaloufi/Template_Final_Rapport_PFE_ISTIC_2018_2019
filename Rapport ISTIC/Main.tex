@@ -1,0 +1,82 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+% Différentes options pour la classe :
+% - taille de la fonte    : 10pt, 11pt, 12pt
+% - recto ou recto-verso    : oneside, twoside
+% - stade de développement    : draft, final
+
+
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage[latin1]{inputenc}    % Pour utiliser les lettres accentuées
+\usepackage{babel,blindtext}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+%\usepackage[francais,english]{babel}%          gestion du français
+\usepackage{textcomp}%                 caractères additionnels
+\usepackage{multirow}
+\usepackage{supertabular}
+\usepackage[pdftex]{graphicx}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage[french]{varioref}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{ifpdf} % part of the hyperref bundle
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage[table,xcdraw]{xcolor}
+
+%\usepackage{abstract}
+
+
+ % set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+
+\pagestyle{fancy}
+\fancyhead[L]{\nouppercase\leftmark} %pour afficher le nom du chapitre à gauche
+\fancyhead[C]{}
+\fancyhead[R]{\nouppercase\rightmark} %pour afficher le nom de la section à droite
+
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\textbf{\thepage}}
+
+% Début du document
+\begin{document}
+
+\include{garde_fin}
+\include{garde_sign_fin}
+\newpage
+\pagenumbering{roman}
+\include{Dedicaces}
+\include{Remerciements}
+\tableofcontents    % Table des matières
+\listoffigures        % Liste des figures
+\listoftables        % Liste des tableaux
+\newpage
+\pagenumbering{arabic}
+\include{Introduction}
+\include{Chapitre1}
+\include{Chapitre2}
+\include{Chapitre3}
+\include{Chapitre4}
+\include{Chapitre5}
+\include{Conclusion}
+
+\bibliographystyle{plain}
+\bibliography{Biblio}
+\addcontentsline{toc}{chapter}{Bibliographie}% ajouter son entrée dans la table
+\pagestyle{empty}
+\include{Annexe1}
+
+
+
+
+% Fin du document
+\end{document}
